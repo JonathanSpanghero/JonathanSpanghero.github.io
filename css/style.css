@@ -15,6 +15,9 @@ body {
     background-color: #000000;
     color: #ffffff;
     padding-top: 60px;
+    overflow-x: hidden; /* Remove o scroll horizontal */
+    margin: 0;
+    padding: 0;
 }
 
 /* Cabeçalho */
@@ -150,7 +153,7 @@ section h2 {
 }
 
 .sobre-imagem, .habilidades-imagem {
-    width: 40%;
+    width: 30%;
     max-width: 300px;
     border-radius: 10px;
     margin-left: 20px; /* Espaço entre imagem e texto */
@@ -256,5 +259,51 @@ footer a {
 
 footer a:hover {
     text-decoration: underline; /* Efeito hover no link */
+}
+
+/* Posição inicial das animações */
+.content-left, .content-right {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animação de entrada pela esquerda */
+.content-left {
+    transform: translateX(-100px);
+}
+
+.content-right {
+    transform: translateX(100px);
+}
+
+/* Classe para ativar a animação quando o usuário rola até a sessão */
+.section.visible .content-left, .section.visible .content-right {
+    opacity: 1;
+    transform: translateX(0); /* Volta à posição original */
+}
+/* Adicione a classe para animações no início do seu CSS */
+
+.section {
+    max-width: 100vw; /* Garante que a seção não ultrapasse a largura da tela */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(-100px); /* Inicia fora da tela, à esquerda */
+    transition: all 0.6s ease-in-out;
+}
+
+.section:nth-child(even) {
+    transform: translateX(100px); /* As seções pares entram da direita */
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateX(0); /* Move para a posição original */
+}
+
+img, .section img {
+    max-width: 100%; /* Faz com que imagens respeitem a largura da seção */
+    height: auto;
 }
 
