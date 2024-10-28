@@ -1,0 +1,260 @@
+/* Reset e Configuração Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 60px;
+}
+
+/* Cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 9999;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #FFA500;
+}
+
+.header-icon img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* Estilos Gerais das Seções */
+section {
+    min-height: 100vh; /* Faz a seção ocupar toda a altura da tela */
+    padding: 60px 20px; /* Padding opcional para adicionar espaço ao redor do conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o conteúdo da seção */
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #FFA500;
+    padding-bottom: 0.5rem;
+    color: #FFA500;
+}
+
+#Introducao {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.introducao-conteudo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.introducao-imagem {
+    width: 40%; /* Ajuste conforme necessário */
+    max-width: 600px; /* Define um limite de largura */
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.introducao-texto {
+    width: 60%; /* Ajuste conforme necessário */
+    color: #fff;
+}
+
+.introducao-texto h1 {
+    font-size: 2.5rem;
+}
+
+.introducao-texto p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.botoes-introducao a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botao-linkedin { background-color: #0077b5; }
+.botao-github { background-color: #333; }
+.botao-curriculo { background-color: #ff5500; }
+
+.botoes-introducao a:hover {
+    opacity: 0.8;
+}
+
+/* Estilos para as seções Sobre e Habilidades */
+#sobre, #habilidades {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.sobre-conteudo, .habilidades-conteudo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.sobre-texto, .habilidades-texto {
+    width: 60%;
+    color: #fff;
+    padding-right: 20px; /* Espaço entre texto e imagem */
+}
+
+.sobre-imagem, .habilidades-imagem {
+    width: 40%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-left: 20px; /* Espaço entre imagem e texto */
+}
+
+#sobre h2, #habilidades h2 {
+    font-size: 2rem;
+    color: #FFA500; /* Cor laranja */
+    margin-bottom: 0.5rem;
+}
+
+#habilidades ul {
+    padding-left: 1rem;
+    list-style: disc;
+}
+
+#habilidades ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projetos */
+.projetos-galeria {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.projeto-item {
+    background-color: #ffa6006c;
+    padding: 1rem;
+    border-radius: 5px;
+    width: calc(50% - 1rem);
+}
+
+/* Contato */
+#contato p {
+    font-size: 1.2rem;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    header nav {
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .projetos-galeria {
+        flex-direction: column;
+    }
+
+    .projeto-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #Introdução h1 {
+        font-size: 2rem;
+    }
+
+    .botoes-introducao a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilo para o rodapé - Entre em Contato */
+footer {
+    background-color: #2a2a2a; /* Cor de fundo para o rodapé */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    color: #FFA500; /* Cor laranja */
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+footer a {
+    color: #FFA500; /* Cor laranja para o link */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Efeito hover no link */
+}
+
