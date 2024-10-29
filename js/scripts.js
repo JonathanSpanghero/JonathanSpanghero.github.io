@@ -1,25 +1,25 @@
-// scripts.js
-
 document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll(".section");
+    const sections = document.querySelectorAll('.section');
 
     function checkVisibility() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+
         sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            const isVisible = rect.top <= (window.innerHeight * 0.8) && rect.bottom >= 0;
-            if (isVisible) {
-                section.classList.add("visible");
+            const sectionTop = section.getBoundingClientRect().top;
+
+            if (sectionTop < triggerBottom) {
+                section.classList.add('visible');
             } else {
-                section.classList.remove("visible"); // opcional: remove a classe se a seção sair da visualização
+                section.classList.remove('visible');
             }
         });
     }
 
-    // Verifica visibilidade ao rolar a página
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Checa ao carregar a página
-    
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+    checkVisibility(); // Chamada inicial para aplicar a classe visible
 });
+
 
 // Seleciona o botão hamburguer e o menu
 const hamburguer = document.querySelector('.hamburguer');

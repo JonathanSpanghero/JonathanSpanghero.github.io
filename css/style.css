@@ -6,7 +6,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
 }
 
 body {
@@ -63,11 +63,15 @@ header nav a:hover {
 
 /* Estilos Gerais das Seções */
 section {
+
+    padding-top: 60px; /* Ou um valor adequado para evitar sobreposição */
     min-height: 100vh; /* Faz a seção ocupar toda a altura da tela */
     padding: 60px 20px; /* Padding opcional para adicionar espaço ao redor do conteúdo */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centraliza verticalmente o conteúdo da seção */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+
 }
 
 section h2 {
