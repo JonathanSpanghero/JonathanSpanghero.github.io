@@ -18,4 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Verifica visibilidade ao rolar a página
     window.addEventListener("scroll", checkVisibility);
     checkVisibility(); // Checa ao carregar a página
+    
 });
+
+// Seleciona o botão hamburguer e o menu
+const hamburguer = document.querySelector('.hamburguer');
+const menu = document.querySelector('header nav');
+
+// Adiciona um evento de clique ao botão hamburguer
+hamburguer.addEventListener('click', () => {
+    // Alterna a classe 'active' no menu ao clicar no hamburguer
+    menu.classList.toggle('active');
+});
+
